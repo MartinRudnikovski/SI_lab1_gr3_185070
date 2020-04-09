@@ -1,7 +1,7 @@
 class Receipt{
     List<Item> items;
 
-    Receipt(){ this.items = new List<>(); }
+    Receipt(){ this.items = new ListLinked<>(); }
     Receipt(List <Item> list){ this.items = list; }
 
     public void addItem(Item item){
@@ -20,6 +20,7 @@ class Receipt{
             else if(i.getTax() == 'B')
                 sum += i.getPrice()*0.05 + i.getPrice();
             else sum += i.getPrice();
+            return sum;
         }
     }
 }
